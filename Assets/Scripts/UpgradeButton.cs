@@ -31,7 +31,6 @@ public static class UpgradeFactory
         {
             case "Double Coins":
                 return new CoinMultiplierUpgrade();
-            // Add more upgrades here if desired
             default:
                 return null;
         }
@@ -52,8 +51,8 @@ public class UpgradeButton : MonoBehaviour
         Upgrade upgrade = UpgradeFactory.CreateUpgrade("Double Coins");
         if (GameManager.Instance.CoinCount >= upgrade.Cost)
         {
-            GameManager.Instance.AddCoins(-upgrade.Cost); // Deduct cost
-            upgrade.ApplyUpgrade(); // Apply the upgrade effect
+            GameManager.Instance.AddCoins(-upgrade.Cost);
+            upgrade.ApplyUpgrade();
         }
         else
         {
